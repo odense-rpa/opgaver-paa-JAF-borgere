@@ -19,7 +19,6 @@ proces_navn = "Opgaver på JAF borgere"
 
 
 async def populate_queue(workqueue: Workqueue):
-    logger = logging.getLogger(__name__)
 
     # sætter filtre op til at finde 6.7 borgere, der har startet i målgruppen indenfor 1600 og 1400 dage siden
     filters = [
@@ -70,9 +69,6 @@ async def populate_queue(workqueue: Workqueue):
 
 
 async def process_workqueue(workqueue: Workqueue):
-    logger = logging.getLogger(__name__)
-
-    logger.info("Hello from process workqueue!")
 
     for item in workqueue:
         with item:
