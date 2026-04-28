@@ -115,7 +115,6 @@ async def process_workqueue(workqueue: Workqueue):
                 tracker.track_task(process_name=proces_navn)
 
             except Exception as e:
-                logger.error(f"Error processing item: {data}. Error: {e}")
                 item.fail(str(e))
 
 
